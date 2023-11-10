@@ -4,7 +4,7 @@ import express from "express"
 const router = express.Router()
 
 // code for these CRUD operations are written in controllers and imported here  
-import { countByCity, countByType, createHotel } from "../controllers/hotel.js";
+import { countByCity, countByType, createHotel, getHotelRooms } from "../controllers/hotel.js";
 import { updateHotel } from "../controllers/hotel.js";
 import { deleteHotel } from "../controllers/hotel.js";
 import { getHotel } from "../controllers/hotel.js";
@@ -43,6 +43,6 @@ router.get("/",getHotels);
 router.get("/countByCity", countByCity);
 // to get count if types like hotels,apartments and so on
 router.get("/countByType", countByType);
-// router.get("/room/:id", getHotelRooms);
+router.get("/room/:id", getHotelRooms);
 
 export default router; 
